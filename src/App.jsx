@@ -1,15 +1,23 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import English from './English/English';
+import Parsian from './Parsian/Parsian';
+import Title from './UI/Title';
+import AboutmeEng from './English/AboutMeEng/AboutmeEng';
+import FlashCartEng from './English/FlashCart/FlashCartEng';
+
 function App() {
   return (
-    <div>
-      <h1>My-Big-Project</h1>
-      <p>لطفا زبان مورد نظر خود را انتخاب کنید</p>
-      <p>Please choose your language</p>
-      <div>
-        <label htmlFor="farsi">فارسی</label><input type="radio"  id="languge1" name="language"/>
-        <label htmlFor="farsi">English</label><input type="radio"  id="language2" name="language" />
-      </div>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Title />} />
+        <Route path="english" element={<English />} >
+          <Route path='aboutmeEng' element={<AboutmeEng />} />
+          <Route path='flashcartEng' element={<FlashCartEng/>} />
+        </Route>
+        <Route path="parsian" element={<Parsian />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
