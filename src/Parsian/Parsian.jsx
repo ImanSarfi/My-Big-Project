@@ -1,8 +1,12 @@
+import { NavLink, Outlet } from 'react-router-dom';
 
 function Parsian() {
   return (
     <div>
-        اینجا بخش پرژه های فارسی است
+      <p>اینجا بخش پرژه های فارسی است</p>
+      <Outlet />
+      <NavLink to="/parsian/AboutmeFa"> درباره ما</NavLink>
+      <NavLink to="/parsian/flashcartEng"> فلش کارت</NavLink>
     </div>
   );
 }

@@ -1,11 +1,12 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 function English() {
   return (
     <div>
       <p>Thise are English project section</p>
-      <NavLink to="/aboutmeEng" >AboutME(Bio)</NavLink>
-      <NavLink to="/flashcartEng">Flashcart</NavLink>
+      <Outlet/>
+      <NavLink to="/english/flashcartEng">FlashCart</NavLink>
+      <NavLink to="/english/aboutmeEng">AboutMe</NavLink>
     </div>
   );
 }
