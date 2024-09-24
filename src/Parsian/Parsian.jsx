@@ -7,6 +7,8 @@ function Parsian() {
       <Outlet />
       <NavLink to="/parsian/AboutmeFa"> درباره ما</NavLink>
       <NavLink to="/parsian/flashcartEng"> فلش کارت</NavLink>
+      <NavLink to="/parsian/datecounterFa">روز شمار</NavLink>
+      <NavLink to="/parsian/accordionFa">کامپوننت آکاردیون</NavLink>
     </div>
   );
 }
