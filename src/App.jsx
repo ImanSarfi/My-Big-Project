@@ -1,35 +1,78 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import English from './English/English';
-import Parsian from './Parsian/Parsian';
-import Title from './UI/Title';
-import AboutmeEng from './English/AboutMeEng/AboutmeEng';
-import FlashCartEng from './English/FlashCart/FlashCartEng';
-import AboutMeFa from './Parsian/AboutMeFa/AboutMeFa';
-import FlashCartFa from './Parsian/FlashCartFa/FlashCartFa';
-import DateCounterEng from './English/DateCounterEng/DateCounterEng';
-import AccordionEng from './English/AccordionEng/AccordionEng';
-import DateCounterFa from './Parsian/DateCounterFa/DateCounterFa';
-import AccordionFa from './Parsian/َAccordionFa/AccordionFa';
+import styled from 'styled-components';
+
+const Body = styled.body`
+font-family: "sans-serif";
+background-color: grey;
+
+display: grid;
+grid-template-columns: 20rem 1fr;
+grid-template-rows: 3rem 1fr;
+height: 100vh;
+
+`
+const Header = styled.header`
+background-color: red ; `
+
+const Sidebar = styled.section`
+background-color: green;
+grid-row: 1/-1;
+
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap:30px`
+
+const Nav=styled.nav`
+display: flex;
+
+height: 80%;
+`
+const List=styled.ul`
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap : 20px;
+`
+const List2=styled.li`
+`
+
+const Link = styled.a`
+text-decoration: none;
+`
+
+
+const Article = styled.article`
+background-color: orange;`
+
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Title />} />
-        <Route path="english" element={<English />}>
-          <Route path="aboutmeEng" element={<AboutmeEng />} />
-          <Route path="flashcartEng" element={<FlashCartEng />} />
-          <Route path="datecounterEng" element={<DateCounterEng />} />
-          <Route path="accordionEng" element={<AccordionEng />} />
-        </Route>
-        <Route path="parsian" element={<Parsian />}>
-          <Route path="AboutmeFa" element={<AboutMeFa />} />
-          <Route path="flashcartEng" element={<FlashCartFa />} />
-          <Route path="datecounterFa" element={<DateCounterFa />} />
-          <Route path="accordionFa" element={<AccordionFa />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <Body>
+      <Header>My-Big-Project</Header>
+      <Sidebar>
+        <div>LOGO</div>
+        <Nav>
+          <List>
+            <List2>
+              <Link href="">Home</Link>
+            </List2>
+            <List2>
+              <Link href="">acardion</Link>
+            </List2>
+            <List2>
+              <Link href="">abloutme</Link>
+            </List2>
+            <List2>
+              <Link href="">FlashCart</Link>
+            </List2>
+          </List>
+        </Nav>
+      </Sidebar>
+      <Article>Content</Article>
+    </Body>
   );
 }
 
